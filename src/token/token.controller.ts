@@ -14,8 +14,9 @@ import { TokenService } from './token.service';
 export class TokenController {
   constructor(private service: TokenService) {}
 
-  @Get()
-  async create() {
-    return this.service.createToken();
+  @Post()
+  async create(@Body() data: Token) {
+    debugger;
+    return this.service.createToken(data.name);
   }
 }
